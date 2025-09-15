@@ -11,3 +11,5 @@ sqlalchemy
 faiss-cpu
 playwright
 python-dotenv
+httpx[http2]
+playwright==1.43.0

@@ -193,8 +193,12 @@ def search_jobs(request):
             
             return JsonResponse(serializable_results)
         except json.JSONDecodeError:
+            tb = traceback.format_exc()
+            print("오류 발생 | JSONDecodeError \n", tb)
             return HttpResponseBadRequest(json.dumps({'error': 'Invalid JSON.'}), content_type="application/json")
         except Exception as e:
+            tb = traceback.format_exc()
+            print("오류 발생 | Exception\n", tb)
             return HttpResponseServerError(json.dumps({'error': str(e)}), content_type="application/json")
     return HttpResponseBadRequest(json.dumps({'error': 'Only POST method is allowed.'}), content_type="application/json")
 
