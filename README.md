@@ -1,6 +1,11 @@
-# skn15-4th-2team
+# ✨ 취업하Job – 당신의 AI 취업 도우미
 
-## 👥 1. 팀 소개
+> Django 기반의 AI 취업 지원 AI 챗봇 기반 웹서비스
+> 자기소개서 생성부터 채용 공고 탐색까지, 당신의 취업 여정을 함께합니다.
+
+---
+
+## 👥 팀 소개
 
 <table>
   <tr>
@@ -45,91 +50,119 @@
 
 ---
 
-## 🗓️ 2. 프로젝트 기간
+## 🗓️ 프로젝트 기간
 
-<div align="center">
-  <strong>📅 2025년 9월 15일(월) ~ 9월 16일(화)</strong>
-</div>
+📅 **2025년 9월 15일(월) ~ 9월 16일(화)**
 
 ---
 
-## 🧩 3. 프로젝트 개요
+## 📕 프로젝트 개요
 
-### 📕 프로젝트명
-**취업하Job – 당신의 AI 취업 도우미**
+### ✅ 목적
 
-### ✅ 배경 및 목적
-
-취업 준비 시 수많은 공고 중 나에게 맞는 것을 찾는 데 **많은 시간**이 소요됩니다.  
-**취업하Job** 은 사용자의 희망 조건(직무, 지역, 급여, 근무형태 등)과 역량(자격증, 기술, 경험 등)을 받아  
-**조건에 부합하는 공고만 필터링**해주고,  
-**기업 인재상과 자소서 DB**를 바탕으로 **자기소개서를 자동 생성 및 첨삭**해줍니다.
-
-### 🖐️ 시스템 요약
-
-**Streamlit 기반 통합 시스템**으로 다음 기능을 제공합니다:
-
-#### 🔗 공고 검색
-- 사용자의 조건 및 역량을 입력받아
-- LLM을 통해 직무 키워드 추론
-- **잡코리아에서 역할별 공고 Top-N 자동 수집**
-
-#### ✍️ 자소서 생성 및 첨삭
-- 합격자 자소서 패턴 + 기업 인재상 기반
-- 입력 스펙 기반 자소서 초안 작성
-- 기존 자소서는 **톤/분량/적합도**를 고려해 **자동 첨삭**
+- 취업 준비 시 반복적인 작업(공고 탐색, 자소서 작성 등)에 많은 시간이 소요됩니다.
+- **취업하Job**은 지원자의 조건과 스펙을 바탕으로 적합한 공고를 추천하고,
+  기업 인재상 기반의 **맞춤형 자기소개서**를 자동으로 작성 및 첨삭합니다.
 
 ---
 
-## 🏗️ 4. 아키텍처
+## 🧠 주요 기능
 
-### 🔍 채용 공고 검색 시스템
+| 기능 | 설명 |
+|------|------|
+| 🔍 **공고 추천** | 입력된 스펙을 바탕으로 적합한 **채용공고를 자동 수집 및 필터링** |
+| ✍️ **자기소개서 생성** | 기업 인재상 + 유저 스펙 기반으로 **맞춤형 자소서 초안 자동 생성** |
+| 🪄 **자기소개서 첨삭** | 작성된 자소서를 바탕으로 **톤, 분량, 적합성** 중심의 AI 피드백 제공 |
 
-- 사용자 입력 → LLM 기반 스펙 구조화
-- 키워드 확장 → Playwright 크롤링
-- 역할별 공고 리스트를 Streamlit UI에 출력
+---
 
-<img width="2187" height="903" alt="Image" src="https://github.com/user-attachments/assets/4c782f7d-fc6d-4a71-9fd3-79137ec2daf7" />
+## 🖥️ 시스템 구조
 
-### ✍️ 자기소개서 생성 시스템
+```
+[사용자 입력]
+      ↓
+[의도 분류] → 자소서 / 공고 구분
+      ↓
+┌────────────────────┬────────────────────────────┐
+│ [자기소개서]       │         [공고 추천]        │
+│ 회사/직무/스펙 추출 │   스펙 기반 직무 키워드 추출 │
+│ 인재상 & 예시 로딩 │   확장 키워드로 공고 크롤링  │
+│ 자소서 생성 & 첨삭  │        공고 리스트 출력     │
+└────────────────────┴────────────────────────────┘
+      ↓
+[Django 웹 UI 출력]
+```
 
-- 회사명·직무·스펙 → 기업 DB 조회
-- 자소서 작성용 프롬프트 생성 → LLM 호출
-- 생성된 자소서에 대해 자동 피드백 생성
-- Streamlit UI에 최종 결과 출력
+---
+
+## 🏗️ 시스템 아키텍처
+
+### 🔍 공고 추천 시스템
+
+- LLM 기반 입력 분석 → 키워드 매핑
+- 직무 키워드 확장 → Playwright 크롤링
+- Django 웹 페이지에 채용 리스트 출력
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/251a6e96-69c1-49d2-9477-4962488901a8" alt="자기소개서 시스템 아키텍처" width="1000">
+  <img src="https://github.com/user-attachments/assets/4c782f7d-fc6d-4a71-9fd3-79137ec2daf7" width="900" alt="공고 아키텍처"/>
 </p>
 
 ---
 
-## 🎯 5. 기대효과
+### ✍️ 자기소개서 생성 시스템
 
-### ⏱ 시간 절약 & 효율적인 지원
-- 공고 탐색, 자소서 작성·첨삭 시간 절감  
-- 본질적인 준비(면접 등)에 집중 가능  
-- **취업 준비의 전반적인 생산성 향상**
+- 사용자 입력 → 회사명, 직무, 스펙 추출
+- 기업 인재상 / 자소서 예시 DB 조회
+- LangGraph로 자소서 생성 → 첨삭 루프 수행
+- 최종 결과는 Django UI로 제공
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/251a6e96-69c1-49d2-9477-4962488901a8" width="900" alt="자기소개서 아키텍처"/>
+</p>
 
 ---
 
-## ⚙️ 6. 기술 스택
+## ⚙️ 기술 스택
 
-### 🖥️ Frontend  
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+### 🌐 웹 프레임워크
+<p>
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
+</p>
 
-### 🧠 Backend / LLM  
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)  
-![LangChain](https://img.shields.io/badge/LangChain-4B8BBE?style=for-the-badge)  
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)  
-![Pydantic](https://img.shields.io/badge/Pydantic-008000?style=for-the-badge)
+### 🧠 AI & LLM
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" />
+  <img src="https://img.shields.io/badge/LangChain-4B8BBE?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/LangGraph-6969ff?style=for-the-badge" />
+</p>
 
-![AWS](https://img.shields.io/badge/amazon%20aws-%23232F3E.svg?&style=for-the-badge&logo=amazon%20aws&logoColor=white)
+### 📊 데이터 분석 / 추천
+<p>
+  <img src="https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQLAlchemy-cdcdcd?style=for-the-badge" />
+</p>
 
-### 📊 Embedding / Ranking  
-![sentence-transformers](https://img.shields.io/badge/sentence--transformers-00599C?style=for-the-badge)  
-![scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+### 🌐 크롤링 & 비동기
+<p>
+  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white" />
+  <img src="https://img.shields.io/badge/asyncio-005571?style=for-the-badge" />
+</p>
 
-### 🕸️ Crawling / Async  
-![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)  
-![asyncio](https://img.shields.io/badge/asyncio-005571?style=for-the-badge)
+### ☁️ 배포 & 인프라
+<p>
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" />
+</p>
+
+---
+
+## 🎯 기대 효과
+
+| 항목 | 효과 |
+|------|------|
+| ⏱ **시간 절약** | 반복적인 공고 탐색 및 자소서 작성 업무 자동화 |
+| 🎯 **정확성 향상** | 인재상 기반 자기소개서로 기업 맞춤화 지원 |
+| 🔁 **반복 첨삭** | 첨삭 루프를 통해 품질 높은 자소서 완성 |
+| 🖥 **사용자 친화적** | Django 기반 웹 UI로 접근성과 사용성 향상 |
+
+---
