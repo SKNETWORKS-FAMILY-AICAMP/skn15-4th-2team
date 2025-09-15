@@ -124,6 +124,8 @@
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)  
 ![Pydantic](https://img.shields.io/badge/Pydantic-008000?style=for-the-badge)
 
+![AWS](https://img.shields.io/badge/amazon%20aws-%23232F3E.svg?&style=for-the-badge&logo=amazon%20aws&logoColor=white)
+
 ### 📊 Embedding / Ranking  
 ![sentence-transformers](https://img.shields.io/badge/sentence--transformers-00599C?style=for-the-badge)  
 ![scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
