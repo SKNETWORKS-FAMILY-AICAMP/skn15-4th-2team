@@ -1,0 +1,13 @@
+django
+openai
+langchain
+langchain-openai
+langgraph
+transformers
+torch
+pandas
+sentencepiece
+sqlalchemy
+faiss-cpu
+playwright
+python-dotenv

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>취업하 JOB</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+    <header>
+        <h1>취업하 JOB</h1>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>기능 선택</h3>
+            <button class="nav-button active" onclick="showSection('job-search')">🔍 공고 검색</button>
+            <button class="nav-button" onclick="showSection('cover-letter-writer')">✍️ 자기소개서 작성</button>
+        </div>
+
+        <main id="content">
+            <section id="job-search" class="active">
+                <h2>🔍 역할별 빠른 채용 검색</h2>
+                <p>스펙을 입력해 주세요 (예: '서울 거주 신입, 4년제 졸, 파이썬 가능')</p>
+                <div class="form-group">
+                    <textarea id="search-spec" rows="4"></textarea>
+                    <button id="search-button">검색 실행</button>
+                </div>
+                <div id="search-results" class="results-container"></div>
+            </section>
+
+            <section id="cover-letter-writer">
+                <h2>✍️ 자기소개서 작성 & 첨삭</h2>
+                <div class="form-group">
+                    <label for="company-name">지원 회사명</label>
+                    <input type="text" id="company-name">
+                </div>
+                <div class="form-group">
+                    <label for="job-title">지원 직무</label>
+                    <input type="text" id="job-title">
+                </div>
+                <div class="form-group">
+                    <label for="my-spec">본인 스펙 및 경험 입력</label>
+                    <textarea id="my-spec" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="language-select">언어 선택</label>
+                    <select id="language-select">
+                        <option value="ko">한국어</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="char-limit">최대 글자 수 (0은 제한 없음)</label>
+                    <input type="number" id="char-limit" value="0" min="0" step="10">
+                </div>
+
+                <div class="form-group">
+                    <label for="question-select">작성할 자기소개서 문항을 선택하세요</label>
+                    <select id="question-select">
+                        <option value="자기소개 (대인관계, 장단점, 성장과정 등)">자기소개 (대인관계, 장단점, 성장과정 등)</option>
+                        <option value="지원동기 및 입사 후 포부">지원동기 및 입사 후 포부</option>
+                        <option value="본인의 강점 및 역량">본인의 강점 및 역량</option>
+                        <option value="위기극복 사례">위기극복 사례</option>
+                        <option value="주도적으로 업무 수행한 경험">주도적으로 업무 수행한 경험</option>
+                    </select>
+                    <p id="selected-question"></p>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="use-example">
+                    <label for="use-example">내부 DB 자소서 예시 참고 사용</label>
+                </div>
+
+                <div id="company-info"></div>
+
+                <button id="generate-button" disabled>자기소개서 생성 및 첨삭</button>
+
+                <div id="loading-indicator" class="hidden">
+                    <p>요청 처리 중입니다. 잠시만 기다려 주세요...</p>
+                </div>
+                
+                <div id="writer-results" class="results-container">
+                    <div id="generated-resume-section" >
+                        <h3>생성된 자기소개서</h3>
+                        <textarea id="generated-resume" readonly></textarea>
+                    </div>
+                    <div id="feedback-section" style="display: none;">
+                        <h3>첨삭 피드백</h3>
+                        <textarea id="feedback-text" readonly></textarea>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

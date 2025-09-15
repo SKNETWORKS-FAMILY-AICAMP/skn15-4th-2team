@@ -1,0 +1,39 @@
+# Python bytecode
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# 환경 파일 및 데이터
+.env
+*.sqlite3
+*.db
+
+# 캐시/로컬 데이터
+.cache_llm/
+*.log
+
+# 가상환경
+.env/
+.venv/
+env/
+**/env/
+**/.venv/
+
+# VSCode
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Langchain/Chainlit
+.chainlit/
+
+# Django static/media (선택)
+staticfiles/
+media/
+
+# Ignore Django migration history (선택)
+**/migrations/__pycache__/
+**/migrations/*.pyc
+**/migrations/*.pyo
