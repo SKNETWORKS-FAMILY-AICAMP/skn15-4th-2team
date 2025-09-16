@@ -108,7 +108,8 @@ flowchart TD
 | 🎨 **Frontend**      | ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat\&logo=html5\&logoColor=white)  ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat\&logo=css3\&logoColor=white)  ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat\&logo=javascript\&logoColor=black)  ![Django](https://img.shields.io/badge/-Django-092E20?style=flat\&logo=django\&logoColor=white)                                                                                                              |
 | ⚡ **크롤링 / 비동기**      | ![Playwright](https://img.shields.io/badge/-Playwright-000000?style=flat\&logo=playwright\&logoColor=white) ![asyncio](https://img.shields.io/badge/-asyncio-3776AB?style=flat\&logo=python\&logoColor=white) ![httpx](https://img.shields.io/badge/-httpx-0A84FF?style=flat)  ![BeautifulSoup](https://img.shields.io/badge/-BeautifulSoup-4B8BBE?style=flat\&logo=beautifulsoup\&logoColor=white)                                                                                                              |
 | 🔍 **자연어처리 / 검색**    | ![SentenceTransformers](https://img.shields.io/badge/-SentenceTransformers-FF6F61?style=flat)  ![FAISS](https://img.shields.io/badge/-FAISS-228B22?style=flat\&logo=faiss\&logoColor=white)  ![NumPy](https://img.shields.io/badge/-NumPy-013243?style=flat\&logo=numpy\&logoColor=white)                                                                                                                                                                                                                           |
-| 🗄 **Database**      | ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=flat\&logo=postgresql\&logoColor=white)(운영)  ![SQLite](https://img.shields.io/badge/-SQLite-003B57?style=flat\&logo=sqlite\&logoColor=white)(개발)                                                                                                                                                                                                                                                                                                         |
+| 🗄 **Database** | ![PostgreSQL 운영](https://img.shields.io/badge/PostgreSQL-운영-336791?style=flat&logo=postgresql&logoColor=white) ![SQLite 개발](https://img.shields.io/badge/SQLite-개발-003B57?style=flat&logo=sqlite&logoColor=white) |
+                                                                                                                                                                                                                                                                                                    |
 
 ---
 
@@ -134,23 +135,29 @@ skn15-4th-2team/
 
 ### 1. 환경 설정
 
-`.env` 파일에 OpenAI 키 등 설정:
-env
+**`.env`** 파일을 생성하고 아래와 같이 환경 변수를 입력:
+```env
 OPENAI_API_KEY=your-api-key
 CHAT_URL=https://your-llm-endpoint.com
+```
 
 ### 2. 패키지 설치
-Python 패키지를 아래 명령어로 설치
-pip install -r requirements.txt
 
+필요한 패키지를 설치합니다:
+```
+pip install -r requirements.txt
+```
 ### 3. 데이터베이스 마이그레이션
-Django 프로젝트의 초기 마이그레이션을 실행
+Django 프로젝트의 초기 마이그레이션을 실행:
+```
 python manage.py migrate
+```
 
 ### 4. 서버 실행
-Django 개발 서버를 실행
+Django 개발 서버를 실행:
+```
 python manage.py runserver
-
+```
 ---
 
 ## 🖥️ 데모 화면 예시
