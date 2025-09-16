@@ -116,8 +116,9 @@
 - LangGraph로 자소서 생성 → 첨삭 루프 수행
 - 최종 결과는 Django UI로 제공
 
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/251a6e96-69c1-49d2-9477-4962488901a8" width="900" alt="자기소개서 아키텍처"/>
+  <img width="3366" height="678" alt="jasoseo" src="https://github.com/user-attachments/assets/32a0182a-e04b-4b34-b845-15e97496fc7c" />
 </p>
 
 ---
