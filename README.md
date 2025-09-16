@@ -162,6 +162,30 @@ python manage.py runserver
 
 ## 🖥️ 데모 화면 예시
 
+<table>
+  <tr>
+    <td align="center">
+      <img width="450" alt="gonggo-search" src="https://github.com/user-attachments/assets/e2dc967a-5918-40d0-847c-ffc31464ed97" />
+      <br/><sub><b>공고 검색 화면</b></sub>
+    </td>
+    <td align="center">
+      <img width="450" alt="jsoseo-eval" src="https://github.com/user-attachments/assets/2a6fcfbf-0dd9-49a9-8908-a348ec88a1a0" />
+      <br/><sub><b>자소서 평가 피드백</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img width="450" alt="jasosoe-web" src="https://github.com/user-attachments/assets/3bb68ac7-5529-4f5d-aa1c-67de751bcc30" />
+      <br/><sub><b>자소서 작성 페이지</b></sub>
+    </td>
+    <td align="center">
+      <img width="450" alt="jasosoe-web1" src="https://github.com/user-attachments/assets/dddc3287-3504-4c6a-b105-a0e425258b9c" />
+      <br/><sub><b>자소서 생성 결과</b></sub>
+    </td>
+  </tr>
+</table>
+
+
 | 기능               | 화면 설명                                                                 |
 |--------------------|----------------------------------------------------------------------------|
 | 🔍 공고 탐색        | 사용자 스펙 입력 → 키워드 분석 → Playwright 기반 공고 크롤링 결과 출력     |
