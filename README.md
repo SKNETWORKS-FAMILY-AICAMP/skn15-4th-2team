@@ -38,13 +38,6 @@
         <img src="https://github.com/jeong-mincheol.png" width="80" style="border-radius:50%;" alt="정민철 아바타"/><br/>
         <strong>정민철</strong><br/><code>@jeong-mincheol</code><br/>
       </a>
-    </td>
-    <td align="center" width="150">
-      <a href="https://github.com/AQUAQUA5">
-        <img src="https://github.com/AQUAQUA5.png" width="80" style="border-radius:50%;" alt="오원장 아바타"/><br/>
-        <strong>오원장(실종)</strong><br/><code>@AQUAQUA5</code><br/>
-      </a>
-    </td>
   </tr>
 </table>
 
